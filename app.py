@@ -22,8 +22,7 @@ def predict():
     # Predict the cluster
     prediction = kmeans.predict(features)[0]
     
-
-    # Map the prediction to the respective category
+        # Map the prediction to the respective category
     if prediction == 0:
         prediction_text = 'Customer is careless'
     elif prediction == 1:
@@ -38,4 +37,4 @@ def predict():
     return render_template('index.html', prediction_text=f'Predicted Category: {prediction_text}')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8080)
